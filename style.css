@@ -1,0 +1,67 @@
+/*
+************ Banner ***************
+*/
+.banner{
+  width: 100%;
+  height: auto;
+  color: white;
+  background-color: #3B5998;
+  font: Tahoma;
+  font-weight: bold;
+  display: flex;
+}
+
+.buttons{
+  background-color: #3B5998;
+  color: white;
+  text: Tahoma;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.topDiv{
+  margin: auto;
+  margin-top: 40px;
+  width: 500px;
+}
+
+.bottomDiv{
+  margin: auto;
+  width: 518px;
+}
+
+#buttonDiv{
+  padding: 5px;
+  margin: auto;
+  width: 100%;
+}
+
+#filler{
+  flex: 1;
+}
+
+#toolName{
+  margin-right: 30px;
+  text-align: right;
+  font-size: 50px;
+}
+
+#output{
+  margin-top: 20px;
+  font: Tahoma;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+#outputTable {
+    border-top: 2px solid #3B5998;
+    border-bottom: 2px solid #3B5998;
+}
+
+#outputTable td{
+    padding: 8px;
+}
+
+#outputTable tr:nth-child(odd){background-color: #f2f2f2;}
