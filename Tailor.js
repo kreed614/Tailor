@@ -61,7 +61,7 @@ function findMostUsed(array){
   return results;
 }
 
-//function to remove array at specific index
+//function to remove element at specific index
 function remove(array, element){
   index = array.indexOf(element);
   array.splice(index, 1);
@@ -201,6 +201,25 @@ function findPeriod(array){
   return period;
 }
 
+//removes common words from the output array
+function removeCommonWords(array){
+  //add undesired output words to this array
+  commonWords = ["a", "and", "is", "the", "of", "our", "some", "to",
+  "as", "an", "at", "in", "this", "we're", "are", "for", "on", "other", "you",
+  "we", "that", "can", "do", "about", "or", "all", "have", "with", "be","will",
+  "it", "by", "new", "us", "from", "get","while", "every", "more", "than", "ways",
+  "you'll", "most", "one", "day-to-day", "full-time"];
+
+  for (i=0; i<array.length; i++){
+    for (j =0; j<commonWords.length; j++){
+      if (array[i] == commonWords[j]){
+        remove(array, array[i]); i--;
+      }
+    }
+  }
+  return array;
+}
+
 function deleteOldTable(){
   document.getElementById("output").innerHTML = "";
 }
@@ -233,104 +252,4 @@ function generateTable(array){
   } else {
     tableElement.innerHTML= "No results";
   }
-}
-
-function removeCommonWords(array){
-  for (var j = 0; j < array.length; j ++){
-    switch (array[j]) {
-      //single words
-      case "a": remove(array, array[j]); j--;
-        break;
-      case "and": remove(array, array[j]); j--;
-        break;
-      case "is": remove(array, array[j]); j--;
-        break;
-      case "the": remove(array, array[j]); j--;
-        break;
-      case "of": remove(array, array[j]); j--;
-          break;
-      case "our": remove(array, array[j]); j--;
-          break;
-      case "some": remove(array, array[j]); j--;
-        break;
-      case "to": remove(array, array[j]); j--;
-        break;
-      case "as": remove(array, array[j]); j--;
-        break;
-      case "an": remove(array, array[j]); j--;
-        break;
-      case "at": remove(array, array[j]); j--;
-          break;
-      case "in": remove(array, array[j]); j--;
-          break;
-      case "this": remove(array, array[j]); j--;
-          break;
-      case "we're": remove(array, array[j]); j--;
-          break;
-      case "are": remove(array, array[j]); j--;
-        break;
-      case "for": remove(array, array[j]); j--;
-        break;
-      case "on": remove(array, array[j]); j--;
-        break;
-      case "other": remove(array, array[j]); j--;
-        break;
-      case "you": remove(array, array[j]); j--;
-        break;
-      case "we": remove(array, array[j]); j--;
-        break;
-      case "that": remove(array, array[j]); j--;
-        break;
-      case "can": remove(array, array[j]); j--;
-        break;
-      case "do": remove(array, array[j]); j--;
-        break;
-      case "about": remove(array, array[j]); j--;
-        break;
-      case "or": remove(array, array[j]); j--;
-        break;
-      case "all": remove(array, array[j]); j--;
-        break;
-      case "have": remove(array, array[j]); j--;
-        break;
-      case "with": remove(array, array[j]); j--;
-        break;
-      case "be": remove(array, array[j]); j--;
-        break;
-      case "will": remove(array, array[j]); j--;
-        break;
-      case "it": remove(array, array[j]); j--;
-        break;
-      case "by": remove(array, array[j]); j--;
-        break;
-      case "new": remove(array, array[j]); j--;
-        break;
-      case "us": remove(array, array[j]); j--;
-        break;
-      case "from": remove(array, array[j]); j--;
-        break;
-      case "get": remove(array, array[j]); j--;
-        break;
-      case "while": remove(array, array[j]); j--;
-        break;
-      case "every": remove(array, array[j]); j--;
-        break;
-      case "more": remove(array, array[j]); j--;
-        break;
-      case "than": remove(array, array[j]); j--;
-        break;
-      case "ways": remove(array, array[j]); j--;
-        break;
-      case "you’ll": remove(array, array[j]); j--;
-        break;
-
-
-      //Hyphenated words
-      case "day-to-day": remove(array, array[j]); j--;
-        break;
-      case "full-time": remove(array, array[j]); j--;
-        break;
-    }
-  }
-  return array;
 }
